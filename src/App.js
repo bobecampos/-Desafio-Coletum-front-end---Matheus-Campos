@@ -1,25 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import FormTitle from './form-title'
+import FormTextInput from './form-text-input'
+import FormDateInput from './form-date-input'
+import FormStarInput from './form-star-input'
 
+// ------------------------------------------------------- RENDER
 class App extends Component {
-  render() {
+  constructor () {
+    super()
+    this.state = {
+      
+    }
+  }
+
+  render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="container">
+        <div className="row">
+          <FormTitle>Cadastro de Pokémon</FormTitle>
+          <div className="col-md-7">
+            <form>
+              <FormTextInput label="Nome/Espécie" componentId="nomeespecie89604" type="textfield" helpBlock={null} order={0} components={null} />
+              <FormTextInput label="Apelido carinhoso" componentId="apelidoCarinhoso89605" type="textfield" helpBlock="Invente um apelido para ele" order={1} components={null} />
+              <FormDateInput label="Data da captura" componentId="dataDaCaptura89876" type="datefield" helpBlock={null} order={2} components={null} />
+              <FormStarInput label="Força" componentId="forca90032" />
+            </form>
+          </div>
+        </div>
       </div>
     );
   }
