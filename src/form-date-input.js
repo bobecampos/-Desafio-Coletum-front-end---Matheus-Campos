@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import DatePicker from 'react-datepicker'
 
 class FormDateInput extends Component {
   constructor () {
@@ -8,30 +9,26 @@ class FormDateInput extends Component {
       }
   }
 
-  changeHandler = event => {
-    this.setState({
-      value: event.target.value
-    });
-  }
-
   render () {
     return (
-      <div className="form-group row">
-          <label className="col-sm-4 col-form-label text-label" htmlFor={this.props.componentId}>{this.props.label}</label>
-          <div className="col-sm-8">
-            <div className="input-group">
-              <input className="form-control" id={this.props.componentId} type={this.props.type} order={this.props.order} components={this.props.components} value ={this.state.value} onChange={this.changeHandler}/>
-              <div className="input-group-append">
-                <button className="btn btn-gray"><span className="far fa-calendar-alt"></span></button>
-              </div>
-            </div>
-            <small className="form-text">{this.props.helpBlock}</small>
+        <div className="input-group">
+          <DatePicker
+            className="form-control"
+            id={this.props.componentId}
+            order={this.props.order}
+            placeholderText="DD/MM/AAAA"
+            value ={this.state.value}
+            selected={this.state.startDate}
+            onChange={this.handleChange}
+          />
+          <div className="input-group-append">
+            <span className="input-group-text far fa-calendar-alt"></span>
           </div>
-      </div>
+        </div>
     )
   }
 }
 
 export default FormDateInput
 
-// label, componentId, type, helpBlock, order, components
+// <button className="btn btn-gray"><span className="far fa-calendar-alt"></span></button>

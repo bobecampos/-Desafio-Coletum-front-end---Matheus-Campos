@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class FormTextInput extends Component {
+class FormUrlInput extends Component {
   constructor () {
       super ()
       this.state = {
@@ -19,8 +19,9 @@ class FormTextInput extends Component {
       <input
         className="form-control"
         id={this.props.componentId}
-        type="text"
+        type="url"
         order={this.props.order}
+        components={this.props.components}
         value ={this.state.value}
         onChange={this.changeHandler}
       />
@@ -28,4 +29,4 @@ class FormTextInput extends Component {
   }
 }
 
-export default FormTextInput
+export default FormUrlInput
